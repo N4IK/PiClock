@@ -239,7 +239,7 @@ def wxfinished():
     wxstr = str(wxreply.readAll())
     wxdata = json.loads(wxstr)
     f = wxdata['current']
-    wxiconpixmap = QtGui.QPixmap(Config.icons + "/" + f['weather'][0]['main'] + ".png")
+    wxiconpixmap = QtGui.QPixmap(Config.icons + "/" + f['weather'][0]['icon'] + ".png")
     wxicon.setPixmap(wxiconpixmap.scaled(
         wxicon.width(), wxicon.height(), Qt.IgnoreAspectRatio,
         Qt.SmoothTransformation))
@@ -306,7 +306,7 @@ def wxfinished():
         fl = forecast[i]
         icon = fl.findChild(QtGui.QLabel, "icon")
         wxiconpixmap = QtGui.QPixmap(
-            Config.icons + "/" + f['weather'][0]['main'] + ".png")
+            Config.icons + "/" + f['weather'][0]['icon'] + ".png")
         icon.setPixmap(wxiconpixmap.scaled(
             icon.width(),
             icon.height(),
@@ -353,7 +353,7 @@ def wxfinished():
         f = wxdata['daily'][i - 3]
         fl = forecast[i]
         icon = fl.findChild(QtGui.QLabel, "icon")
-        wxiconpixmap = QtGui.QPixmap(Config.icons + "/" + f['weather'][0]['main'] + ".png")
+        wxiconpixmap = QtGui.QPixmap(Config.icons + "/" + f['weather'][0]['icon'] + ".png")
         icon.setPixmap(wxiconpixmap.scaled(
             icon.width(),
             icon.height(),
