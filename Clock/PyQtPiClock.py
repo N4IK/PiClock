@@ -321,14 +321,14 @@ def wxfinished():
         ptype = ''
         paccum = 0
         if ('pop' in f):
-            pop = float(f['pop'])
+            pop = f['pop'] * 100
         if ('precipAccumulation' in f):
             paccum = float(f['precipAccumulation'])
         if ('precipType' in f):
             ptype = f['precipType']
 
         if (pop > 0.0 or ptype != ''):
-            s += '%.0f' % pop + '% '
+            s += str(pop) + '% '
         if Config.metric:
             if (ptype == 'snow'):
                 if (paccum > 0.05):
@@ -368,14 +368,14 @@ def wxfinished():
         ptype = ''
         paccum = 0
         if ('pop' in f):
-            pop = float(f['pop'])
+            pop = f['pop'] * 100
         if ('precipAccumulation' in f):
             paccum = float(f['precipAccumulation'])
         if ('precipType' in f):
             ptype = f['precipType']
 
         if (pop > 0.05 or ptype != ''):
-            s += '%.0f' % pop + '% '
+            s += str(pop) + '% '
         if Config.metric:
             if (ptype == 'snow'):
                 if (paccum > 0.05):
